@@ -25,7 +25,7 @@ function init() {
     camera.position.y = 10;
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xffffff );
+    scene.background = new THREE.Color( 0x8FFFDD );
     scene.fog = new THREE.Fog( 0xffffff, 0, 750 );
 
     const light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 2.5 );

@@ -28,7 +28,7 @@ function init() {
     camera.position.y = getY( worldHalfWidth, worldHalfDepth ) * 100 + 100;
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xbfd1e5 );
+    scene.background = new THREE.Color( 0x87CEEB );
 
     // sides
 
