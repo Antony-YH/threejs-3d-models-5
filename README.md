@@ -11,7 +11,7 @@ Una aplicación web de portafolio que integra cinco simulaciones 3D interactivas
 
 ## 📂 Estructura del Proyecto
 
-El proyecto sigue una arquitectura modular organizada de la siguiente manera:
+El proyecto sigue una arquitectura modular organizada de la siguiente manera: 
 ```text
 threejs-3d-models-5/
 ├── assets/
