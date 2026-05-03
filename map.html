@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - map controls</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <style>
+        body {
+            background-color: #ccc;
+            color: #000;
+        }
+
+        a {
+            color: #f00;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            background: #2c3e50;
+            color: #fff !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="info">
+        <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - map controls<br/>
+        <!-- Botón para regresar al menú principal -->
+        <a href="index.html" class="back-btn">← Volver al Menú Principal</a>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./assets/build/three.module.js",
+                "three/addons/": "./assets/jsm/"
+            }
+        }
+    </script>
+
+    <!-- Apuntando al archivo JS separado -->
+    <script type="module" src="./assets/js/map.js"></script>
+
+</body>
+</html>
