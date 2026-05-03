@@ -8,7 +8,7 @@ init();
 function init() {
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x7F5F34 );
+    scene.background = new THREE.Color( 0xDE9854 );
     scene.fog = new THREE.FogExp2( 0xA18872, 0.002 );
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -38,7 +38,7 @@ function init() {
 
     // world
     const geometry = new THREE.ConeGeometry( 10, 30, 4, 1 );
-    const material = new THREE.MeshPhongMaterial( { color: 0x2BBA43, flatShading: true } );
+    const material = new THREE.MeshPhongMaterial( { color: 0x00ff00, flatShading: true, wireframe: true } );
 
     const mesh = new THREE.InstancedMesh( geometry, material, 500 );
     const dummy = new THREE.Object3D();

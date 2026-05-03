@@ -172,7 +172,7 @@ function generateHeight( width, height ) {
 
         }
 
-        quality *= 4;
+        quality *= 6;
 
     }
 
@@ -199,7 +199,33 @@ function animate() {
 
 function render() {
 
+    // Actualiza los controles (movimiento de la cámara)
     controls.update( timer.getDelta() );
+
+    // --- INICIO DE LÓGICA DE COLISIÓN ---
+    
+    // 1. Calculamos la coordenada del jugador en la cuadrícula del mundo
+    let posX = Math.floor( camera.position.x / 100 ) + worldHalfWidth;
+    let posZ = Math.floor( camera.position.z / 100 ) + worldHalfDepth;
+
+    // 2. Limitamos los valores para no salirnos de los bordes del mapa y causar un error
+    posX = Math.max( 0, Math.min( worldWidth - 1, posX ) );
+    posZ = Math.max( 0, Math.min( worldDepth - 1, posZ ) );
+
+    // 3. Consultamos la altura del suelo en esa posición exacta
+    // (Multiplicamos por 100 porque cada bloque en el mundo mide 100 unidades)
+    const groundHeight = getY( posX, posZ ) * 100;
+
+    // 4. Definimos la altura del jugador (150 equivale a 1.5 bloques de alto para los ojos)
+    const playerHeight = 150;
+
+    // 5. Si el eje Y de la cámara intenta atravesar el suelo, lo empujamos hacia arriba
+    if ( camera.position.y < groundHeight + playerHeight ) {
+        camera.position.y = groundHeight + playerHeight;
+    }
+    
+    // --- FIN DE LÓGICA DE COLISIÓN ---
+
     renderer.render( scene, camera );
 
 }

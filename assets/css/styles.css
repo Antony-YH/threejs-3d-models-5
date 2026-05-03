@@ -1,17 +1,148 @@
-body {
-    scroll-behavior: smooth;
+/* Variables de Color: Tema Neon Volt (Llamativo) */
+:root {
+    --bg-color: #0a0514; /* Violeta muy oscuro, casi negro */
+    --primary-neon: #ccff00; /* Verde Voltio / Amarillo Neón */
+    --secondary-neon: #ff007a; /* Magenta Eléctrico */
+    --card-bg: rgba(20, 10, 35, 0.65);
+    --glass-border: rgba(204, 255, 0, 0.2);
 }
 
-/* Contenedor responsivo para los iframes */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: #e0e0e0;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fuente técnica para detalles */
+.tech-font {
+    font-family: 'Fira Code', monospace;
+}
+.tech-accent {
+    color: var(--primary-neon);
+    font-family: 'Fira Code', monospace;
+    margin-right: 5px;
+    text-shadow: 0 0 8px rgba(204, 255, 0, 0.4);
+}
+
+/* Fondo de cuadrícula estilo matriz */
+.cyber-grid {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: 
+        linear-gradient(rgba(255, 0, 122, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(204, 255, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -2;
+}
+
+/* Luces de fondo ambientales hiper-vibrantes */
+.bg-glow {
+    position: fixed;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(120px);
+    opacity: 0.15;
+}
+.glow-primary { 
+    top: -15%; left: -10%; 
+    background: radial-gradient(circle, var(--primary-neon) 0%, transparent 60%); 
+}
+.glow-secondary { 
+    bottom: -15%; right: -10%; 
+    background: radial-gradient(circle, var(--secondary-neon) 0%, transparent 60%); 
+}
+
+/* Navbar Cristalino */
+.glass-navbar {
+    background: rgba(10, 5, 20, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(204, 255, 0, 0.05);
+}
+
+.glass-navbar .nav-link {
+    color: #a098b0;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.glass-navbar .nav-link:hover {
+    color: var(--primary-neon);
+    text-shadow: 0 0 12px rgba(204, 255, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Texto Gradiente Llamativo */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 122, 0.3));
+}
+
+/* Animación del cursor en el título */
+.blink {
+    animation: blinker 1s linear infinite;
+    color: var(--primary-neon);
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Cabecera Hero */
+.hero-section {
+    padding-top: 130px;
+    padding-bottom: 50px;
+}
+
+.cyber-badge {
+    background-color: rgba(204, 255, 0, 0.1);
+    color: var(--primary-neon);
+    border: 1px solid var(--primary-neon);
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 2px;
+    padding: 8px 15px;
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+}
+
+/* Tarjetas Ultra-Vibrantes */
+.cyber-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.cyber-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 30px rgba(204, 255, 0, 0.2), inset 0 0 20px rgba(255, 0, 122, 0.1);
+}
+
+/* Contenedor de los iframes */
 .iframe-container {
     width: 100%;
-    height: 400px;
-    background-color: #000;
+    height: 350px;
+    border-radius: 6px;
     overflow: hidden;
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
-.col-12 .iframe-container {
-    height: 500px; /* La demo principal es más grande */
+.iframe-container.main-demo {
+    height: 500px;
 }
 
 .iframe-container iframe {
@@ -20,55 +151,41 @@ body {
     border: none;
 }
 
-/* UIverse: Estilo de Tarjetas */
-.uiverse-card {
-    border-radius: 12px;
-    overflow: hidden;
-    background: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0e0e0;
-}
-
-.uiverse-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-}
-
-.card-header {
-    padding: 12px 20px;
-    border-bottom: none;
-}
-
-/* UIverse: Botones interactivos */
-.uiverse-btn, .uiverse-btn-dark {
-    padding: 6px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 0.85rem;
+/* Botón Estilo Terminal Llamativo */
+.cyber-btn {
+    padding: 8px 18px;
+    background: rgba(255, 0, 122, 0.1);
+    border: 1px solid var(--secondary-neon);
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
     font-weight: bold;
-    transition: all 0.2s;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 0, 122, 0.2);
 }
 
-.uiverse-btn {
-    background: rgba(255,255,255,0.2);
+.cyber-btn:hover {
+    background: var(--secondary-neon);
     color: #fff;
-    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 20px var(--secondary-neon), 0 0 40px var(--secondary-neon);
+    transform: translateY(-2px);
 }
 
-.uiverse-btn:hover {
-    background: #fff;
-    color: #000;
+/* Footer */
+.glass-footer {
+    background: rgba(10, 5, 20, 0.9);
+    border-top: 1px solid var(--glass-border);
 }
 
-.uiverse-btn-dark {
-    background: rgba(0,0,0,0.1);
-    color: #000;
-    border: 1px solid rgba(0,0,0,0.2);
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.uiverse-btn-dark:hover {
-    background: #000;
-    color: #fff;
+.col-md-6, .col-12 {
+    animation: fadeIn 0.8s ease-out forwards;
 }
