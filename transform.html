@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - transform controls</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <style>
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            background: #2c3e50;
+            color: #fff !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="info">
+        "W" translate | "E" rotate | "R" scale | "+/-" adjust size<br />
+        "Q" toggle world/local space |  "Shift" snap to grid<br />
+        "X" toggle X | "Y" toggle Y | "Z" toggle Z | "Spacebar" toggle enabled<br />
+        "Esc" reset current transform<br />
+        "C" toggle camera | "V" random zoom<br />
+        <!-- Botón para regresar al menú principal -->
+        <a href="index.html" class="back-btn">← Volver al Menú Principal</a>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./assets/build/three.module.js",
+                "three/addons/": "./assets/jsm/"
+            }
+        }
+    </script>
+
+    <!-- Apuntando al nuevo archivo JS -->
+    <script type="module" src="./assets/js/transform.js"></script>
+
+</body>
+</html>
