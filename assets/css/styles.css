@@ -1,0 +1,74 @@
+body {
+    scroll-behavior: smooth;
+}
+
+/* Contenedor responsivo para los iframes */
+.iframe-container {
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.col-12 .iframe-container {
+    height: 500px; /* La demo principal es más grande */
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* UIverse: Estilo de Tarjetas */
+.uiverse-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.uiverse-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.card-header {
+    padding: 12px 20px;
+    border-bottom: none;
+}
+
+/* UIverse: Botones interactivos */
+.uiverse-btn, .uiverse-btn-dark {
+    padding: 6px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.uiverse-btn {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.uiverse-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.uiverse-btn-dark {
+    background: rgba(0,0,0,0.1);
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.uiverse-btn-dark:hover {
+    background: #000;
+    color: #fff;
+}

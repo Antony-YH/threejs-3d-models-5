@@ -10,8 +10,20 @@
             background-color: #bfd1e5;
             color: #61443e;
         }
+        
         a {
             color: #a06851;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            background: #2c3e50;
+            color: #fff !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -20,7 +32,9 @@
     <div id="container"></div>
     <div id="info">
         <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - <a href="http://www.minecraft.net/" target="_blank" rel="noopener">minecraft</a> demo. featuring <a href="http://painterlypack.net/" target="_blank" rel="noopener">painterly pack</a><br />
-        (left click: forward, right click: backward)
+        (left click: forward, right click: backward)<br/>
+        <!-- Botón para regresar al menú principal -->
+        <a href="index.html" class="back-btn">← Volver al Menú Principal</a>
     </div>
 
     <script type="importmap">
@@ -32,7 +46,8 @@
         }
     </script>
 
-    <script type="module" src="./assets/js/main.js"></script>
+    <!-- Apuntando al archivo JS de Minecraft -->
+    <script type="module" src="./assets/js/minecraft.js"></script>
 
 </body>
 </html>
